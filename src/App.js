@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route  } from 'react-router-dom';
+import { useState } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase/loginGoogle';
+import { Login } from './views/login/Login';
+import './App.css'
+import { Main } from './views/Main';
 
 function App() {
+
+  //para condicionar el ruteo use un cambio de estado para ver si esta ogueado o no 
+  //onAuthStateChanged es una función de firebase
+  
+const [ isAutenticate, setAutenticate ] = useState(null);
+
+onAuthStateChanged(auth, (user) =>{
+  if (user){
+    setAutenticate(user);
+  }else {
+    setAutenticate(null);
+  }
+})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    {isAutenticate?<Routes>
+        <Route path='/' element={<Main/>} />
+        <Route path='/Muro' element={<Main/>} />
+      </Routes>
+    : <Routes>
+        <Route path='/' element={<Login />} /> 
+
+    </Routes>}
+    </BrowserRouter>
+
+
   );
 }
 

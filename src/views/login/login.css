@@ -1,0 +1,60 @@
+.login{
+    background: rgba(93, 158, 219, 0.558);
+    border-radius: 20px;
+    width: 50%;
+    height: 70%;
+    position: absolute;
+    left: 25%;
+    top:15%;
+}
+.login h1{
+    font-size: 70px;
+    font-family: 'Podkova', serif;
+    position: absolute;
+    left: 22%;
+}
+.login p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    width: 38%;
+    position: absolute;
+    top: 35%;
+    left: 32%;
+}
+#btnLogin{
+    width: 30%;
+    height: 12%;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    position: absolute;
+    top: 72%;
+    left: 35%;
+    padding-left: 3%;
+    padding-top: .5%;
+    padding-right: 2%;
+}
+#google{
+    width: 15%;
+    position: absolute;
+    top: 20%;
+    left: 7%;
+    margin: 1%;
+}
+#comenzar{
+    position: absolute;
+    top: 25%;
+    left: 82%;
+ 
+}
+#btnLogin:hover{
+    background-color: #ebe6f0;
+    cursor: pointer;
+}
